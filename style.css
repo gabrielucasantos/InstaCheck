@@ -70,6 +70,18 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
+.footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777777;
+    font-size: 1rem;
+    text-align: center;
+}
+
 #result {
     display: flex;
     flex-direction: column; 
