@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>InstaCheck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>InstaCheck</h1>
+    <p>Verificador de não seguidores do Instagram</p>
+    <br>
+    <p>Carregue seus arquivos JSON de seguidores e seguidos para ver quem não segue você de volta.</p>
+    <br>
+    
+    <div class="upload">
+        <label for="followersFile">Faça upload do arquivo de seus seguidores (JSON):</label>
+        <p>Dica de uso: O arquivo 'followers' significa 'seguidores' em inglês </p>
+        <input type="file" id="followersFile" accept=".json" onchange="updateFileName('followersFile', 'followersFileName')">
+        <button class="custom-file-upload" onclick="document.getElementById('followersFile').click()">Selecionar arquivo</button>
+        <span id="followersFileName">Nenhum arquivo selecionado</span><br>
+    
+        <label for="followingFile">Faça upload do seguinte arquivo (JSON):</label>
+        <p>Dica de uso: O arquivo 'following' significa 'seguindo' em inglês.</p>
+        <input type="file" id="followingFile" accept=".json" onchange="updateFileName('followingFile', 'followingFileName')">
+        <button class="custom-file-upload" onclick="document.getElementById('followingFile').click()">Selecionar arquivo</button>
+        <span id="followingFileName">Nenhum arquivo selecionado</span><br>
+    </div>
+
+    <div class="btn_centralized">
+        <button onclick="checkUnfollowers()">Verifique os que não seguem</button>
+    </div>
+
+    <div id="result"></div>
+    
+    <!-- Novo botão para remover usuários selecionados -->
+    <div class="btn_centralized" id="removeButtonContainer">
+        <button class="btn_remove" id="removeButton" onclick="removeSelected()">Remover Usuários Selecionados</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
